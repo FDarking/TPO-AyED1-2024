@@ -7,18 +7,35 @@ def limpiar_pantalla()-> None:
     # La pantalla del terminal se limpia según el sistema operativo
     system("cls" if name == "nt" else "clear")
 
+
+def mostrar_juegos()-> tuple:
+    juegos = ( #Juegos permitidos
+    "Counter Strike",
+    "Valorant",
+    "League of Legend",
+    "Rainbow 6s",
+    "Overwatch"
+    )
+
+    print("\nJuegos permitidos:")
+    for index,juego in enumerate(juegos):
+        print(f"{index + 1,juego}")
+    return juegos
+
 # Funciones para el menú de carga de datos.
-def registrar_torneo()-> None:
+def registrar_torneo() -> None:
     """
     Precondición: El sistema está listo para registrar un torneo
     Postcondición: Se registra un nuevo torneo en el sistema y se muestra un mensaje confirmando el registro.
-    """ 
+    """
+
     limpiar_pantalla()
     print("Registrar Torneo\n")
+
+    juegos = mostrar_juegos()
+    
     # Función en construcción, vuelva prontos.
     input("Presione Enter para volver al menú...")
-
-
 def cargar_equipo()-> None:
     """
     Precondición: El torneo debe estar registrado previamente.
